@@ -21,9 +21,13 @@
     <None Include="..\.gitignore">
       <Filter>ignore</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="similarityChecker.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
