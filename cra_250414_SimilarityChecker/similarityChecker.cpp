@@ -30,6 +30,29 @@ public:
 		return score;
 	}
 
+	int alpha(string input) {
+		int SameCnt = 0, TotalCnt = 0;
+
+		for (char c = 'A'; c <= 'Z'; c++) {
+			if (strIncludesChar(question, c) || strIncludesChar(input, c))
+				TotalCnt++;
+
+			if (strIncludesChar(question, c) && strIncludesChar(input, c))
+				SameCnt++;
+		}
+
+		return getAlphaScore(SameCnt, TotalCnt);
+	}
+
+	bool strIncludesChar(string str, char c) {
+		return (str.find(c) != string::npos);
+	}
+
+	int getAlphaScore(int same_count, int total_count) {
+		return ((double)same_count / total_count * maxAlphaScore);
+	}
+
 private:
+	const int maxAlphaScore = 40;
 	string question;
 };

@@ -41,6 +41,42 @@ TEST(simChecker, TC4) {
 	EXPECT_EQ(actual, 30);
 }
 
+TEST(simChecker, AlphaDiffSequence) {
+	string org = "ASD", input = "DSA";
+
+	SimilarityChecker sc(org);
+	int actual = sc.alpha(input);
+
+	EXPECT_EQ(actual, 40);
+}
+
+TEST(simChecker, AlphaZeroScore) {
+	string org = "A", input = "BB";
+
+	SimilarityChecker sc(org);
+	int actual = sc.alpha(input);
+
+	EXPECT_EQ(actual, 0);
+}
+
+TEST(simChecker, AlphaDiffLength) {
+	string org = "AAABB", input = "BA";
+
+	SimilarityChecker sc(org);
+	int actual = sc.alpha(input);
+
+	EXPECT_EQ(actual, 40);
+}
+
+TEST(simChecker, AlphaPartialScore) {
+	string org = "AA", input = "AAE";
+
+	SimilarityChecker sc(org);
+	int actual = sc.alpha(input);
+
+	EXPECT_EQ(actual, 20);
+}
+
 int main(void) {
 	::testing::InitGoogleMock();
 	return RUN_ALL_TESTS();
