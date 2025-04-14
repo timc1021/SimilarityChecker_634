@@ -30,6 +30,26 @@ public:
 		return score;
 	}
 
+	int alpha(string input) {
+		int SameCnt = 0, TotalCnt = 0;
+
+		for (char c = 'A'; c <= 'Z'; c++) {
+			if (question.find(c) != string::npos || input.find(c) != string::npos)
+				TotalCnt++;
+		}
+
+		for (char c : question) {
+			for (char in_c : input) {
+				if (c == in_c)
+					SameCnt++;
+			}
+		}
+
+		//cout << SameCnt << " " << TotalCnt << endl;
+
+		return ((double)SameCnt / TotalCnt * 40);
+	}
+
 private:
 	string question;
 };

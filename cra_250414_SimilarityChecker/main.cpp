@@ -41,6 +41,16 @@ TEST(simChecker, TC4) {
 	EXPECT_EQ(actual, 30);
 }
 
+TEST(simChecker, Alpha1) {
+	string org = "ASD", input = "DSA";
+
+	SimilarityChecker sc(org);
+	int actual = sc.alpha(input);
+
+	EXPECT_EQ(actual, 40);
+}
+
+
 int main(void) {
 	::testing::InitGoogleMock();
 	return RUN_ALL_TESTS();
