@@ -36,13 +36,9 @@ public:
 		for (char c = 'A'; c <= 'Z'; c++) {
 			if (question.find(c) != string::npos || input.find(c) != string::npos)
 				TotalCnt++;
-		}
 
-		for (char c : question) {
-			for (char in_c : input) {
-				if (c == in_c)
-					SameCnt++;
-			}
+			if (question.find(c) != string::npos && input.find(c) != string::npos)
+				SameCnt++;
 		}
 
 		//cout << SameCnt << " " << TotalCnt << endl;

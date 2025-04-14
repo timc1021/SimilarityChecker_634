@@ -50,6 +50,24 @@ TEST(simChecker, Alpha1) {
 	EXPECT_EQ(actual, 40);
 }
 
+TEST(simChecker, Alpha2) {
+	string org = "A", input = "BB";
+
+	SimilarityChecker sc(org);
+	int actual = sc.alpha(input);
+
+	EXPECT_EQ(actual, 0);
+}
+
+TEST(simChecker, Alpha3) {
+	string org = "AAABB", input = "BA";
+
+	SimilarityChecker sc(org);
+	int actual = sc.alpha(input);
+
+	EXPECT_EQ(actual, 40);
+}
+
 
 int main(void) {
 	::testing::InitGoogleMock();
