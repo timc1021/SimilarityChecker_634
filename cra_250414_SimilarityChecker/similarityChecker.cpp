@@ -41,8 +41,6 @@ public:
 				SameCnt++;
 		}
 
-		//cout << SameCnt << " " << TotalCnt << endl;
-
 		return ((double)SameCnt / TotalCnt * 40);
 	}
 
